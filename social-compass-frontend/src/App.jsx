@@ -47,7 +47,7 @@ import StoryAutomationPage from "./pages/Automation/StoryAutomationPage";
 import EmailAutomationPage from "./pages/Automation/EmailAutomationPage";
 import CreatePostPage from "./pages/CreateAndSchedule/CreatePostPage";
 import CreatePostFbPage from './pages/CreateAndSchedule/CreatePostFbPage'
-// import SignupPage from "./pages/Signup";
+import SignupPage from "./pages/Signup";
 
 
 function App() {
@@ -55,10 +55,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Sidebar />} />
-        {/* <Route path="signup" element={<SignupPage/>}/> */}
+        
         
 
         <Route path="/login" element={<LoginPage/>}/>
+        <Route path="signup" element={<SignupPage/>}/>
         <Route path="/connect-accounts" element={<ConnectAccountsPage/>}/>
 
 

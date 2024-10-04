@@ -77,32 +77,9 @@ const LoginPage = () => {
       <div className="w-[40%] bg-white flex flex-col justify-center items-stretch px-24">
         <h2 className="text-center text-2xl font-semibold mb-6">Sign-in</h2>
 
-        {/* Social Login Buttons */}
-        <button
-          className="flex items-center justify-center w-full mb-3 p-2 border border-gray-300 rounded-lg hover:bg-gray-100"
-          onClick={onGoogleLogin}
-        >
-          <FaGoogle className="mr-2" />
-          Continue with Google
-        </button>
-        {/* <button
-          className="flex items-center justify-center w-full mb-3 p-2 border border-gray-300 rounded-lg hover:bg-gray-100"
-          onClick={onFacebookLogin}
-        >
-          <FaFacebook className="mr-2" />
-          Continue with Facebook
-        </button>
-        <button
-          className="flex items-center justify-center w-full mb-5 p-2 border border-gray-300 rounded-lg hover:bg-gray-100"
-          onClick={onAppleLogin}
-        >
-          <FaApple className="mr-2" />
-          Continue with Apple
-        </button> */}
+       
 
-        <div className="flex items-center justify-center mb-4">
-          <span className="text-gray-400">or</span>
-        </div>
+        
 
         {/* Email Input */}
         <div className="relative mb-4">
@@ -134,6 +111,36 @@ const LoginPage = () => {
             placeholder="Confirm your password"
           />
         </div>
+
+
+        <div className="flex items-center justify-center mb-4">
+          <span className="text-gray-400">or</span>
+        </div>
+
+
+
+         {/* Social Login Buttons */}
+         <button
+          className="flex items-center justify-center w-full mb-3 p-2 border border-gray-300 rounded-lg hover:bg-gray-100"
+          onClick={onGoogleLogin}
+        >
+          <FaGoogle className="mr-2" />
+          Continue with Google
+        </button>
+        {/* <button
+          className="flex items-center justify-center w-full mb-3 p-2 border border-gray-300 rounded-lg hover:bg-gray-100"
+          onClick={onFacebookLogin}
+        >
+          <FaFacebook className="mr-2" />
+          Continue with Facebook
+        </button>
+        <button
+          className="flex items-center justify-center w-full mb-5 p-2 border border-gray-300 rounded-lg hover:bg-gray-100"
+          onClick={onAppleLogin}
+        >
+          <FaApple className="mr-2" />
+          Continue with Apple
+        </button> */}
 
         {/* Login Button */}
         <button
