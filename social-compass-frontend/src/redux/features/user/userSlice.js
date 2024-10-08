@@ -29,6 +29,16 @@ export const registerUser = createAsyncThunk("registerUser", async (data, { reje
   }
 });
 
+export const loginUser = createAsyncThunk("loginUser", async (data, { rejectWithValue }) => {
+  try {
+    console.log(data);
+    return await handleApi("POST", API_AUTH__ENDPOINTS.login_user, data);
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+});
+
+
 
 
 export const getUserProfile = createAsyncThunk("getUserProfile", async (data, { rejectWithValue }) => {
@@ -77,6 +87,9 @@ export const userSlice = createSlice({
       state.users.push(payload);
     });
     handleAsyncActions(builder, getUserProfile, (state, payload) => {
+      state.profile = payload;
+    });
+    handleAsyncActions(builder, loginUser, (state, payload) => {
       state.profile = payload;
     });
   }

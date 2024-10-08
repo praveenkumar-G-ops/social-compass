@@ -47,7 +47,7 @@ export const register = catchAsyncError(async (req, res, next) => {
 });
 
 
-export const login = catchAsyncError(async (req, res) => {
+export const login = catchAsyncError(async (req, res, next) => {
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

@@ -2,9 +2,9 @@ import { useCallback, useState } from "react";
 import { FaGoogle, /*FaFacebook, FaApple*/ } from "react-icons/fa"; // Importing icons for social login buttons
 import { MdEmail, MdLock } from "react-icons/md"; // Importing icons for email and password fields
 import { useDispatch } from 'react-redux';
-import { registerUser } from "../redux/features/user/userSlice";
+import { loginUser } from "../redux/features/user/userSlice";
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const LoginPage = () => {
@@ -46,14 +46,14 @@ const LoginPage = () => {
     }
     try {
 
-      const resultAction = await dispatch(registerUser(userDetail)).unwrap();
+      const resultAction = await dispatch(loginUser(userDetail)).unwrap();
       // console.log("Registration successful:", resultAction);
       toast.success(resultAction?.message);
       if (resultAction?.success) {
         navigate('/connect-accounts');
       }
     } catch (err) {
-      console.log("Registration failed:", err);
+      console.log("Login failed:", err);
       toast.error(err?.response?.data?.message);
     }
 
@@ -142,10 +142,10 @@ const LoginPage = () => {
 
         {/* Footer */}
         <div className="flex justify-between items-center mt-4 text-sm">
-          {/* <div className="text-gray-500">
+          <div className="text-gray-500">
             Don’t have an account?{" "}
-            <span className="text-blue-500 cursor-pointer">Register</span>
-          </div> */}
+            <Link to="/signup" className="text-blue-500 cursor-pointer">Register here</Link>
+          </div>
         </div>
       </div>
       <div className="w-[60%] bg-[#242565]"></div>
