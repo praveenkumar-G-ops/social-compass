@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import searchIcon from "../../assets/images/navbar/search.png";
 import instagram from "../../assets/images/instagram.png";
 import facebook from "../../assets/images/facebook.png";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import SidebarComp from "../../components/SidebarComp";
 import Navbar from "../../components/Navbar";
 import Heading from "../../components/Styles/Heading";

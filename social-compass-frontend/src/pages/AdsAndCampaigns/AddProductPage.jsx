@@ -5,7 +5,7 @@ import Button from "../../components/Styles/Button";
 import addProduct from "../../assets/images/adsAndCampaign/addProduct.png";
 import upload from "../../assets/images/adsAndCampaign/upload.png";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -67,15 +67,15 @@ const AddProductPage = () => {
                 </select>
               </div>
               <div className="mr-10">
-              <input
-                type="text"
-                placeholder="Product Prize"
-                className="border border-gray-300 rounded-md p-2 w-full placeholder-gray-400"
-              />
-              <span className="text-xs text-gray-400">
-                Enter a valid prize for your product
-              </span>
-            </div>
+                <input
+                  type="text"
+                  placeholder="Product Prize"
+                  className="border border-gray-300 rounded-md p-2 w-full placeholder-gray-400"
+                />
+                <span className="text-xs text-gray-400">
+                  Enter a valid prize for your product
+                </span>
+              </div>
             </div>
           </div>
 
@@ -99,7 +99,7 @@ const AddProductPage = () => {
                   Upload images from your device
                 </p>
                 <div className="relative">
-                  <img src={upload} alt="" className="absolute h-[30px] w-[30px] top-1 left-2"/>
+                  <img src={upload} alt="" className="absolute h-[30px] w-[30px] top-1 left-2" />
                   <select className="appearance-none bg-white border text-xs border-gray-300 rounded-md p-2 pl-10 w-[200px] text-gray-700">
                     <option>Add Image</option>
                   </select>
@@ -111,7 +111,7 @@ const AddProductPage = () => {
 
           {/* next button */}
           <div className="flex justify-end mt-6">
-            <Button text="Next Step" onClick={()=>navigate("/ad-preview")}/>
+            <Button text="Next Step" onClick={() => navigate("/ad-preview")} />
           </div>
         </div>
       </div>

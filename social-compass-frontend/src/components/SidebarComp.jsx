@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSidebarItem } from "../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../redux/features/sidebar/sidebarSlice";
 import { useNavigate } from "react-router-dom";
 
 import dashboardImage from "../assets/images/sidebar/dashboard.png";
@@ -34,7 +34,7 @@ const sidebarItems = [
   { image: analyticsAndReportImage, label: "Analytics and Reports" },
   { image: competitorAnalysisImage, label: "Competitor Analysis" },
   { image: manageImage, label: "Manage" },
-  
+
   { image: logoutImage, label: "Logout" },
 ];
 
@@ -82,7 +82,7 @@ const SidebarComp = () => {
   const confirmLogout = () => {
     setShowLogoutPopup(false);
   };
-  
+
   return (
     <div className="flex">
       <div className="w-[256px] h-screen bg-white p-6 relative">
@@ -92,9 +92,8 @@ const SidebarComp = () => {
             <div
               key={index}
 
-              className={`flex py-3 px-6 cursor-pointer items-center relative ${
-                activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
-              }`}
+              className={`flex py-3 px-6 cursor-pointer items-center relative ${activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
+                }`}
               onClick={() => {
                 handleSidebarItemClick(item.label);
               }}
@@ -110,9 +109,8 @@ const SidebarComp = () => {
             {sidebarItems.slice(10).map((item, index) => (
               <div
                 key={index}
-                className={`flex py-2 px-1 cursor-pointer items-center ${
-                  activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
-                }`}
+                className={`flex py-2 px-1 cursor-pointer items-center ${activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
+                  }`}
                 onClick={() => handleSidebarItemClick(item.label)}
               >
                 <img src={item.image} alt={item.label} className="h-5 w-5" />

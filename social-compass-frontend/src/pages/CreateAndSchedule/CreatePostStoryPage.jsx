@@ -5,7 +5,7 @@ import BoostTab from "../../components/CreateAndSchedule/BoostTab.jsx";
 import LinkModal from "../../components/CreateAndSchedule/LinkModal";
 import ScheduledMessage from "../../components/CreateAndSchedule/ScheduleMessage";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice.js";
 
 const CreatePostStoryPage = () => {
   const dispatch = useDispatch();

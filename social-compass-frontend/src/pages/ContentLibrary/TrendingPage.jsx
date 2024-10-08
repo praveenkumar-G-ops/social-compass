@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useState, useEffect } from "react";
 import Heading from "../../components/Styles/Heading";
 import searchIcon from "../../assets/images/navbar/search.png";
@@ -77,11 +77,10 @@ const TrendingPage = () => {
             {tags.map((tag, index) => (
               <button
                 key={index}
-                className={`px-3 py-1 rounded-full text-xs ${
-                  selectedTag === tag
+                className={`px-3 py-1 rounded-full text-xs ${selectedTag === tag
                     ? "bg-blue-500 text-white"
                     : "bg-gray-100 text-blue-700 border-2 border-blue-500"
-                }`}
+                  }`}
                 onClick={() => handleTagClick(tag)}
               >
                 {tag}
@@ -91,99 +90,96 @@ const TrendingPage = () => {
 
           {/* toggle buttons */}
           <div>
-          
-          <div className="flex space-x-4 mb-4 sticky top-0 bg-gray-100 z-10">
-            <button
-              className={`px-4 py-2 ${
-                activeTab === "Posts" ? "border-b-4 border-[#242565]" : ""
-              }`}
-              onClick={() => setActiveTab("Posts")}
-            >
-              Posts
-            </button>
-            <button
-              className={`px-4 py-2 ${
-                activeTab === "Reels" ? "border-b-4 border-[#242565]" : ""
-              }`}
-              onClick={() => setActiveTab("Reels")}
-            >
-              Reels
-            </button>
-            <button
-              className={`px-4 py-2 ${
-                activeTab === "Toptalks" ? "border-b-4 border-[#242565]" : ""
-              }`}
-              onClick={() => setActiveTab("Toptalks")}
-            >
-              Toptalks
-            </button>
+
+            <div className="flex space-x-4 mb-4 sticky top-0 bg-gray-100 z-10">
+              <button
+                className={`px-4 py-2 ${activeTab === "Posts" ? "border-b-4 border-[#242565]" : ""
+                  }`}
+                onClick={() => setActiveTab("Posts")}
+              >
+                Posts
+              </button>
+              <button
+                className={`px-4 py-2 ${activeTab === "Reels" ? "border-b-4 border-[#242565]" : ""
+                  }`}
+                onClick={() => setActiveTab("Reels")}
+              >
+                Reels
+              </button>
+              <button
+                className={`px-4 py-2 ${activeTab === "Toptalks" ? "border-b-4 border-[#242565]" : ""
+                  }`}
+                onClick={() => setActiveTab("Toptalks")}
+              >
+                Toptalks
+              </button>
 
 
-          
-          </div>
 
-          <div className="bg-white w-[90%] h-full p-4 overflow-y-auto ">
-            {activeTab === "Posts" && (
-              <div className="p-5 flex flex-wrap gap-12">
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-                <img src={postImage} alt="Post" className="w-[300px]" />
-              </div>
-            )}
-            {activeTab === "Reels" && (
-              <div className="p-5 flex flex-wrap gap-12">
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-                <img src={reelImage} alt="Reel" className="w-[300px]" />
-              </div>
-            )}
-            {activeTab === "Toptalks" && (
-              <div className="p-5 flex flex-wrap gap-12">
-                <TopTalksComp
-                  heading={"Marketing"}
-                  description={
-                    "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
-                  }
-                />
-                <TopTalksComp
-                  heading={"Marketing"}
-                  description={
-                    "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
-                  }
-                />
-                <TopTalksComp
-                  heading={"Marketing"}
-                  description={
-                    "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
-                  }
-                />
-                <TopTalksComp
-                  heading={"Marketing"}
-                  description={
-                    "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
-                  }
-                />
-              </div>
-            )}
-          </div>
+            </div>
+
+            <div className="bg-white w-[90%] h-full p-4 overflow-y-auto ">
+              {activeTab === "Posts" && (
+                <div className="p-5 flex flex-wrap gap-12">
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                  <img src={postImage} alt="Post" className="w-[300px]" />
+                </div>
+              )}
+              {activeTab === "Reels" && (
+                <div className="p-5 flex flex-wrap gap-12">
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                  <img src={reelImage} alt="Reel" className="w-[300px]" />
+                </div>
+              )}
+              {activeTab === "Toptalks" && (
+                <div className="p-5 flex flex-wrap gap-12">
+                  <TopTalksComp
+                    heading={"Marketing"}
+                    description={
+                      "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
+                    }
+                  />
+                  <TopTalksComp
+                    heading={"Marketing"}
+                    description={
+                      "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
+                    }
+                  />
+                  <TopTalksComp
+                    heading={"Marketing"}
+                    description={
+                      "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
+                    }
+                  />
+                  <TopTalksComp
+                    heading={"Marketing"}
+                    description={
+                      "Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at."
+                    }
+                  />
+                </div>
+              )}
+            </div>
           </div>
 
           {/* rendering posts, reels and toptalks */}
-         
+
         </div>
       </div>
-      </div>
-    
+    </div>
+
   );
 };
 

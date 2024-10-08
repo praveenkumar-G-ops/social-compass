@@ -5,7 +5,7 @@ import commentIntoSalesImage from "../assets/images/automation/commentIntoSalesI
 import storyIntoLeadImage from "../assets/images/automation/storyIntoLeadImage.png";
 import buildEmailListImage from "../assets/images/automation/buildEmailListImage.png";
 
-import { setSidebarItem } from "../../src/redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../redux/features/sidebar/sidebarSlice";
 
 const AutomationPage = () => {
   const navigate = useNavigate();

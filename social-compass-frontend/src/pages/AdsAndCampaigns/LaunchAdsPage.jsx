@@ -3,7 +3,7 @@ import SidebarComp from "../../components/SidebarComp";
 import Heading from "../../components/Styles/Heading";
 import launchAd from "../../assets/images/adsAndCampaign/launchAd.png";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useEffect } from "react";
 import watch from "../../assets/images/adsAndCampaign/watch.png";
 import AdPreviewComp from "../../components/AdsAndCampaign/AdPreviewComp";

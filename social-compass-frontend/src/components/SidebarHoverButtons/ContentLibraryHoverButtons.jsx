@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 
 const ContentLibraryHoverButtons = () => {
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const ContentLibraryHoverButtons = () => {
         className="block w-full text-left px-4 py-3 border-b border-gray-500 hover:bg-[#3E3D6D] whitespace-nowrap"
         onClick={() => handleButtonClick('/trending')}
       >
-       Trending
+        Trending
       </button>
       <button
         className="block w-full text-left px-4 py-3 border-b border-gray-500 hover:bg-[#3E3D6D] whitespace-nowrap"

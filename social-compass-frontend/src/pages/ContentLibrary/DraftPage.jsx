@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useEffect } from "react";
 import Heading from "../../components/Styles/Heading";
 import searchIcon from "../../assets/images/navbar/search.png";

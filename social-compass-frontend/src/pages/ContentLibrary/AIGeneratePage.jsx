@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import Heading from "../../components/Styles/Heading";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import upload from "../../assets/images/adsAndCampaign/upload.png";
 import Button from "../../components/Styles/Button";
 import { useEffect } from "react";
@@ -67,55 +67,55 @@ const AIGeneratePage = () => {
               or videos.
             </div>
             <div className="flex justify-between mr-10 mt-5">
-            <div className="ml-5 mt-5">
-              <div className="relative">
-                <img
-                  src={upload}
-                  alt=""
-                  className="absolute h-[30px] w-[30px] top-1 left-2"
-                />
-                <select className="appearance-none bg-white border text-xs border-gray-300 rounded-md p-2 pl-10 w-[200px] text-gray-700">
-                  <option>Add photo/video</option>
-                </select>
-               
+              <div className="ml-5 mt-5">
+                <div className="relative">
+                  <img
+                    src={upload}
+                    alt=""
+                    className="absolute h-[30px] w-[30px] top-1 left-2"
+                  />
+                  <select className="appearance-none bg-white border text-xs border-gray-300 rounded-md p-2 pl-10 w-[200px] text-gray-700">
+                    <option>Add photo/video</option>
+                  </select>
+
+                </div>
+
               </div>
-            
-            </div>
-                 <Button text={"Generate"}/>
-              
-            
+              <Button text={"Generate"} />
+
+
             </div>
 
             {/* Generate button */}
-           
+
           </div>
 
-          
+
           {/* Right side results div */}
           <div className="bg-white h-[80%] w-[40%] mt-10 ml-10 rounded-sm shadow-md overflow-x-auto scrollbar-thumb-rounded-full  scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-200 h-32 overflow-y-scroll scrollbar-thin">
-          <div className="font-poppins font-semibold mt-5 ml-5">Results</div>
-          <div className="flex justify-start gap-2 mt-5 ml-5">
-            <AIGenerateComp 
-            image={marketing}
-            heading={"Marketing"} 
-            description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
-            />
-            <AIGenerateComp 
-            image={sales}
-            heading={"Sales"} 
-            description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
-            />
-            <AIGenerateComp 
-            image={marketing}
-            heading={"Marketing"} 
-            description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
-            />
-            <AIGenerateComp 
-            image={sales}
-            heading={"Sales"} 
-            description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
-            />
-          </div>
+            <div className="font-poppins font-semibold mt-5 ml-5">Results</div>
+            <div className="flex justify-start gap-2 mt-5 ml-5">
+              <AIGenerateComp
+                image={marketing}
+                heading={"Marketing"}
+                description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
+              />
+              <AIGenerateComp
+                image={sales}
+                heading={"Sales"}
+                description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
+              />
+              <AIGenerateComp
+                image={marketing}
+                heading={"Marketing"}
+                description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
+              />
+              <AIGenerateComp
+                image={sales}
+                heading={"Sales"}
+                description={"Lorem ipsum dolor sit amet consectetur. Id et dolor viverra faucibus vel lorem. Aliquet eros vulputate ac quam enim at. Laoreet viverra nunc massa mauris facilisis consequat massa sed viverra. Felis ultrices volutpat pulvinar at urna eget."}
+              />
+            </div>
           </div>
         </div>
       </div>

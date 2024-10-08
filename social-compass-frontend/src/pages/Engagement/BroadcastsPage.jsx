@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAtom } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../components/Navbar";
@@ -25,7 +25,7 @@ const BroadcastsPage = () => {
 
   const [activeButton, setActiveButton] = useState("All messages");
   const [activeItem, setActiveItem] = useState(null);
-  const [showPopup, setShowPopup] = useState(false); 
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleButtonClick = (path) => {
     dispatch(setSidebarItem("Engagement"));
@@ -74,11 +74,10 @@ const BroadcastsPage = () => {
                 {["All messages", "Read", "Unread"].map((button) => (
                   <button
                     key={button}
-                    className={`px-4 py-2 rounded-md text-sm ${
-                      activeButton === button
+                    className={`px-4 py-2 rounded-md text-sm ${activeButton === button
                         ? "bg-blue-500 text-white"
                         : "bg-gray-200 text-gray-700"
-                    }`}
+                      }`}
                     onClick={() => setActiveButton(button)}
                   >
                     {button}
@@ -110,11 +109,10 @@ const BroadcastsPage = () => {
                   {broadcasts.map((item, index) => (
                     <div
                       key={index}
-                      className={`flex  px-2 cursor-pointer items-center relative ${
-                        activeItem === index
+                      className={`flex  px-2 cursor-pointer items-center relative ${activeItem === index
                           ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]"
                           : ""
-                      }`}
+                        }`}
                       onClick={() => setActiveItem(index)}
                     >
                       <BroadcastProfile
@@ -167,30 +165,30 @@ const BroadcastsPage = () => {
                     {activeItem === 0 ? (
                       <div>
 
-                     
-                      <div className="border border-gray-300 p-3 rounded-lg">
-                        <img
-                          src={broadcastMsg}
-                          alt="Broadcast Message"
-                          className="rounded-lg mb-4 h-48"
-                        />
-                        <div className="flex flex-col gap-2">
-                          <a
-                            href="https://www.youtube.com/watch?v=am2K2R08GIA&t=98s"
-                            className="text-blue-500"
-                          >
-                            https://www.youtube.com/watch?v=am2K2R08GIA&t=98s
-                          </a>
+
+                        <div className="border border-gray-300 p-3 rounded-lg">
+                          <img
+                            src={broadcastMsg}
+                            alt="Broadcast Message"
+                            className="rounded-lg mb-4 h-48"
+                          />
+                          <div className="flex flex-col gap-2">
+                            <a
+                              href="https://www.youtube.com/watch?v=am2K2R08GIA&t=98s"
+                              className="text-blue-500"
+                            >
+                              https://www.youtube.com/watch?v=am2K2R08GIA&t=98s
+                            </a>
+
+                          </div>
 
                         </div>
-                        
-                      </div>
-                      <div className="bg-gray-200 p-2 rounded-md w-max my-2">
-                            These side quests have the best dialogues.
-                          </div>
-                          <div className="bg-gray-200 p-2 rounded-md w-max">
-                            Yes or no
-                          </div>
+                        <div className="bg-gray-200 p-2 rounded-md w-max my-2">
+                          These side quests have the best dialogues.
+                        </div>
+                        <div className="bg-gray-200 p-2 rounded-md w-max">
+                          Yes or no
+                        </div>
                       </div>
                     ) : (
                       <p className="text-gray-700">No messages to display</p>

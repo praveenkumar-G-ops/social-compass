@@ -14,7 +14,7 @@ import reel1 from "../../assets/images/adsAndCampaign/reel1.png";
 import reel2 from "../../assets/images/adsAndCampaign/reel2.png";
 import reel3 from "../../assets/images/adsAndCampaign/reel3.png";
 import reel4 from "../../assets/images/adsAndCampaign/reel4.png";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useNavigate } from "react-router-dom";
 
 const CompetitorDiscoverPage = () => {
@@ -40,11 +40,11 @@ const CompetitorDiscoverPage = () => {
         <Navbar />
 
         <div className="flex justify-between mt-4 ml-10 mr-20">
-        {/* Heading */}
+          {/* Heading */}
           <Heading text={"Competitor Discover"} />
-        
 
-        <Button text={"Competitor analysis"} onClick={()=>{navigate("/competitor-analysis")}}/>
+
+          <Button text={"Competitor analysis"} onClick={() => { navigate("/competitor-analysis") }} />
         </div>
 
         {/* White div for bg */}
@@ -101,11 +101,11 @@ const CompetitorDiscoverPage = () => {
         <div className="flex justify-start gap-4 px-10">
           {selectedFilter === "Post"
             ? posts.map((post, index) => (
-                <img key={index} src={post} alt={`Post ${index + 1}`} className="w-[23%]" />
-              ))
+              <img key={index} src={post} alt={`Post ${index + 1}`} className="w-[23%]" />
+            ))
             : reels.map((reel, index) => (
-                <img key={index} src={reel} alt={`Reel ${index + 1}`} className="w-[23%]" />
-              ))}
+              <img key={index} src={reel} alt={`Reel ${index + 1}`} className="w-[23%]" />
+            ))}
         </div>
       </div>
     </div>

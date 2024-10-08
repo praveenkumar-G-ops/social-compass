@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUsername } from '../../redux/user/userSlice';
+import { setUsername } from '../../redux/features/user/userSlice';
 import searchIcon from '../../assets/images/navbar/search.png';
 import notification from '../../assets/images/navbar/bell.png';
 import profile from '../../assets/images/navbar/profile.png';

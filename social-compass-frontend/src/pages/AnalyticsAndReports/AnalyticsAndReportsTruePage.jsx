@@ -29,7 +29,7 @@ ChartJS.register(
 );
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 
 const AnalyticsAndReportTruePage = () => {
   const [analytics, setAnalytics] = useState(false);
@@ -94,7 +94,7 @@ const AnalyticsAndReportTruePage = () => {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      <SidebarComp/>
+      <SidebarComp />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Navbar />
 

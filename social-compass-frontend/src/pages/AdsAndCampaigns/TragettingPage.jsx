@@ -4,7 +4,7 @@ import SidebarComp from "../../components/SidebarComp";
 import Heading from "../../components/Styles/Heading";
 import targetting from "../../assets/images/adsAndCampaign/targetting.png";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import map from "../../assets/images/adsAndCampaign/map.png";
 import Button from "../../components/Styles/Button";
 import DatePicker from "react-datepicker";
@@ -105,7 +105,7 @@ const TargettingPage = () => {
                     />
                   </div>
                   <div className="relative">
-                  <p className="absolute z-10 left-3 top-2 text-xs text-gray-400">Campaign end date</p>
+                    <p className="absolute z-10 left-3 top-2 text-xs text-gray-400">Campaign end date</p>
                     <DatePicker
                       selected={endDate}
                       onChange={(date) => setEndDate(date)}
@@ -128,15 +128,14 @@ const TargettingPage = () => {
             </div>
 
             <div className="ml-20">
-            <p className="text-xs text-gray-400 font-poppins text-left mb-5 mt-3">Gender</p>
+              <p className="text-xs text-gray-400 font-poppins text-left mb-5 mt-3">Gender</p>
               <div className="flex justify-start mb-4 ">
                 {["Male", "Female", "All"].map((g) => (
                   <button
                     key={g}
                     onClick={() => setGender(g)}
-                    className={`px-4 py-2 border-2 font-poppins text-xs border-gray-200 ${
-                      gender === g ? "bg-white" : "bg-gray-200"
-                    } `}
+                    className={`px-4 py-2 border-2 font-poppins text-xs border-gray-200 ${gender === g ? "bg-white" : "bg-gray-200"
+                      } `}
                   >
                     {g}
                   </button>
@@ -145,14 +144,14 @@ const TargettingPage = () => {
               <p className="text-xs text-gray-400 font-poppins text-left">Suggested: All</p>
 
               <div className="mt-6">
-              <p className="text-xs text-gray-400 font-poppins text-left mb-5 mt-3">Age</p>
+                <p className="text-xs text-gray-400 font-poppins text-left mb-5 mt-3">Age</p>
                 <Slider
                   range
                   min={18}
                   max={65}
                   defaultValue={ageRange}
                   onChange={setAgeRange}
-                  
+
                 />
                 <div className="flex justify-between text-xs mt-2">
                   <span>{ageRange[0]}</span>
@@ -163,7 +162,7 @@ const TargettingPage = () => {
               </div>
 
               <div className="mt-6">
-              <p className="text-xs text-gray-400 font-poppins text-left mb-2 mt-3">Interests</p>
+                <p className="text-xs text-gray-400 font-poppins text-left mb-2 mt-3">Interests</p>
                 <textarea
                   type="text"
                   placeholder=""
@@ -186,7 +185,7 @@ const TargettingPage = () => {
           </div>
 
           <div className="flex justify-end mt-6">
-            <Button text="Next step" onClick={()=>{navigate('/launch-ad')}}/>
+            <Button text="Next step" onClick={() => { navigate('/launch-ad') }} />
           </div>
         </div>
       </div>

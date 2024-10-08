@@ -7,7 +7,7 @@ import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 // import PublicReply from '../components/PublicReply'
 
 const KeywordInput = () => {
@@ -119,7 +119,7 @@ const KeywordInput = () => {
                       <button
                         type="button"
                         onClick={handleAddExcludeKeyword}
-                       className="flex items-center bg-white border border-gray-200 text-xs text-gray-500 rounded-full px-3 py-1 mb-2"
+                        className="flex items-center bg-white border border-gray-200 text-xs text-gray-500 rounded-full px-3 py-1 mb-2"
                       >
                         <span className="mr-2">+</span> keywords
                       </button>

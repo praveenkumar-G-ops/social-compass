@@ -9,7 +9,7 @@ import Profile from "../../assets/images/engagement/Profile.png";
 import Heading from "../../components/Styles/Heading";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 
 const Checkbox = ({ checked, onChange, label }) => (
   <label className="flex items-center space-x-2">
@@ -20,9 +20,8 @@ const Checkbox = ({ checked, onChange, label }) => (
       className="hidden"
     />
     <span
-      className={`w-5 h-5 flex items-center justify-center border-2 rounded ${
-        checked ? "border-blue-500" : "border-gray-300"
-      }`}
+      className={`w-5 h-5 flex items-center justify-center border-2 rounded ${checked ? "border-blue-500" : "border-gray-300"
+        }`}
     >
       {checked && (
         <svg

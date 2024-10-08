@@ -8,7 +8,7 @@ import image1 from "../../assets/images/competitorAnalysis/image1.png";
 import image2 from "../../assets/images/competitorAnalysis/image2.png";
 import image3 from "../../assets/images/competitorAnalysis/image3.png";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useEffect } from "react";
 
 const DiscoverAdsPage = () => {

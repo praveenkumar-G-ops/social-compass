@@ -3,7 +3,7 @@ import SidebarComp from "../../components/SidebarComp";
 import Heading from "../../components/Styles/Heading";
 import adPreview from "../../assets/images/adsAndCampaign/adPreview.png";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useState, useEffect } from "react";
 import AdPreviewComp from "../../components/AdsAndCampaign/AdPreviewComp";
 import watch from "../../assets/images/adsAndCampaign/watch.png";
@@ -50,31 +50,27 @@ const AdPreviewPage = () => {
 
             <div className="flex bg-gray-200  rounded-md p-1 border border-gray-200">
               <button
-                className={`flex items-center rounded-md px-5 font-poppins py-3 mr-1 ${
-                  selected === "Facebook" ? "bg-white" : "bg-gray-200"
-                }`}
+                className={`flex items-center rounded-md px-5 font-poppins py-3 mr-1 ${selected === "Facebook" ? "bg-white" : "bg-gray-200"
+                  }`}
                 onClick={() => setSelected("Facebook")}
               >
                 <img src={facebook} alt="Facebook" className="w-5 h-5 mr-2" />
                 <span
-                  className={`text-xs font-poppins ${
-                    selected === "Facebook" ? "text-black" : "text-gray-500"
-                  }`}
+                  className={`text-xs font-poppins ${selected === "Facebook" ? "text-black" : "text-gray-500"
+                    }`}
                 >
                   Facebook
                 </span>
               </button>
               <button
-                className={`flex items-center rounded-md px-3 py-1 ${
-                  selected === "Instagram" ? "bg-white" : "bg-gray-200"
-                }`}
+                className={`flex items-center rounded-md px-3 py-1 ${selected === "Instagram" ? "bg-white" : "bg-gray-200"
+                  }`}
                 onClick={() => setSelected("Instagram")}
               >
                 <img src={instagram} alt="Instagram" className="w-5 h-5 mr-2" />
                 <span
-                  className={`text-xs font-poppins ${
-                    selected === "Instagram" ? "text-black" : "text-gray-500"
-                  }`}
+                  className={`text-xs font-poppins ${selected === "Instagram" ? "text-black" : "text-gray-500"
+                    }`}
                 >
                   Instagram
                 </span>
@@ -126,7 +122,7 @@ const AdPreviewPage = () => {
           </div>
 
           <div className="flex justify-end mt-6">
-            <Button text="Next step" onClick={()=>{navigate("/targetting")}}/>
+            <Button text="Next step" onClick={() => { navigate("/targetting") }} />
           </div>
         </div>
       </div>

@@ -3,12 +3,26 @@ import facebook from '../assets/images/facebook.png';
 import instagram from '../assets/images/instagram.png';
 
 const ConnectAccountsPage = () => {
-  const onConnectInstagram = useCallback(() => {
+  const onConnectInstagram = useCallback((e) => {
     // Handle Instagram connect logic
+    e.preventDefault();
+    try {
+      window.location.href = import.meta.env.VITE_INSTAGRAM_AUTH_URL;
+    } catch (err) {
+      console.log("Registration failed:", err);
+      toast.error('Error in login,Please Try again');
+    }
   }, []);
 
-  const onConnectFacebook = useCallback(() => {
+  const onConnectFacebook = useCallback((e) => {
     // Handle Facebook connect logic
+    e.preventDefault();
+    try {
+      window.location.href = import.meta.env.VITE_FACEBOOK_AUTH_URL;
+    } catch (err) {
+      console.log("Registration failed:", err);
+      toast.error('Error in login,Please Try again');
+    }
   }, []);
 
   return (
@@ -20,7 +34,7 @@ const ConnectAccountsPage = () => {
         <h1 className="text-4xl font-semibold font-poppins mb-12 text-gray-600">Connect your channels</h1>
         <div className="flex flex-row space-x-8 w-full h-72">
           <div className="flex flex-col items-center justify-center w-80 p-8 bg-white rounded-lg shadow-lg border border-red-300"
-               style={{ boxShadow: '0 0 10px 3px rgba(255, 0, 0, 0.1)', borderColor: 'rgba(219, 219, 219, 1)' }}>
+            style={{ boxShadow: '0 0 10px 3px rgba(255, 0, 0, 0.1)', borderColor: 'rgba(219, 219, 219, 1)' }}>
             <img src={instagram} alt="Instagram" className="w-16 h-16 mt-2" />
             <h2 className="text-2xl font-semibold mt-3">Instagram</h2>
             <p className="text-gray-500 mt-2 text-xl">Business account</p>
@@ -32,8 +46,8 @@ const ConnectAccountsPage = () => {
             </button>
           </div>
           <div className="flex flex-col items-center justify-center w-80 p-8 bg-white rounded-lg shadow-lg border border-blue-200"
-               style={{ boxShadow: '0 0 10px 3px rgba(54, 180, 223, 0.3)', borderColor: 'rgba(219, 219, 219, 1)' }}>
-            <img src={facebook} alt="Facebook" className="w-20 h-20 mt-1 object-fill"/>
+            style={{ boxShadow: '0 0 10px 3px rgba(54, 180, 223, 0.3)', borderColor: 'rgba(219, 219, 219, 1)' }}>
+            <img src={facebook} alt="Facebook" className="w-20 h-20 mt-1 object-fill" />
             <h2 className="text-2xl font-semibold mt-1">Facebook</h2>
             <p className="text-gray-500 mt-1 text-xl">facebook Page</p>
             <button

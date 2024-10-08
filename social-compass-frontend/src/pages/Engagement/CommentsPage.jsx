@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAtom } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../components/Navbar";
@@ -70,11 +70,10 @@ const CommentsPage = () => {
               {["All messages", "Read", "Unread"].map((button) => (
                 <button
                   key={button}
-                  className={`px-4 py-2 rounded-md text-sm ${
-                    activeButton === button
+                  className={`px-4 py-2 rounded-md text-sm ${activeButton === button
                       ? "bg-blue-500 text-white"
                       : "bg-gray-200 text-gray-700"
-                  }`}
+                    }`}
                   onClick={() => setActiveButton(button)}
                 >
                   {button}
@@ -101,11 +100,10 @@ const CommentsPage = () => {
                   {users.map((item, index) => (
                     <div
                       key={index}
-                      className={`flex px-2 cursor-pointer items-center relative ${
-                        activeItem === index
+                      className={`flex px-2 cursor-pointer items-center relative ${activeItem === index
                           ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]"
                           : ""
-                      }`}
+                        }`}
                       onClick={() => {
                         setActiveItem(index);
                         setSelectedUser(item);

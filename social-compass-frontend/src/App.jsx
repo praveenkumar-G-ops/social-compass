@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Ads and Campaigns
 import CreateCampaignPage from "./pages/AdsAndCampaigns/CreateCampaignPage";
@@ -53,19 +55,29 @@ import SignupPage from "./pages/Signup";
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer position="top-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition:Bounce />
       <Routes>
         <Route path="/" element={<Sidebar />} />
-        
-        
 
-        <Route path="/login" element={<LoginPage/>}/>
-        <Route path="signup" element={<SignupPage/>}/>
-        <Route path="/connect-accounts" element={<ConnectAccountsPage/>}/>
+
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="/connect-accounts" element={<ConnectAccountsPage />} />
 
 
         {/* Create and Schedule */}
-        <Route path="/create-post-instagram" element={<CreatePostPage/>}/>
-        <Route path="/create-post-facebook" element={<CreatePostFbPage/>}/>
+        <Route path="/create-post-instagram" element={<CreatePostPage />} />
+        <Route path="/create-post-facebook" element={<CreatePostFbPage />} />
 
 
         {/* Content Management */}
@@ -77,30 +89,30 @@ function App() {
         <Route path="/broadcasts" element={<BroadcastsPage />} />
         <Route path="/comments" element={<CommentsPage />} />
         <Route path="/inbox" element={<InboxPage />} />
-        <Route path="/automated-response" element={<AutomatedResponse/>} />
-        <Route path="/create-response" element={<CreateResponse/>} />
+        <Route path="/automated-response" element={<AutomatedResponse />} />
+        <Route path="/create-response" element={<CreateResponse />} />
 
 
         {/* Automation */}
-        <Route path="/comment-automation" element={<CommentAutomationPage/>}/>
-        <Route path="/comment-automation-addKeywords" element={<KeywordInput/>}/>
-        <Route path="/comment-automation-publicreply" element={<PublicReply/>}/>
-        <Route path="/comment-automation-replyindm" element={<ReplyInDm/>}/>
+        <Route path="/comment-automation" element={<CommentAutomationPage />} />
+        <Route path="/comment-automation-addKeywords" element={<KeywordInput />} />
+        <Route path="/comment-automation-publicreply" element={<PublicReply />} />
+        <Route path="/comment-automation-replyindm" element={<ReplyInDm />} />
 
-        <Route path="/story-automation" element={<StoryAutomationPage/>}/>
-        <Route path="/email-automation" element={<EmailAutomationPage/>}/>
+        <Route path="/story-automation" element={<StoryAutomationPage />} />
+        <Route path="/email-automation" element={<EmailAutomationPage />} />
 
 
         {/* Ads and Campaign */}
         <Route path="/create-campaign" element={<CreateCampaignPage />} />
 
-        <Route path="/add-product" element={<AddProductPage/>}/>
-        <Route path="/ad-preview" element={<AdPreviewPage/>}/>
-        <Route path="/targetting" element={<TargettingPage/>}/>
-        <Route path="/launch-ad" element={<LaunchAdsPage/>}/>
+        <Route path="/add-product" element={<AddProductPage />} />
+        <Route path="/ad-preview" element={<AdPreviewPage />} />
+        <Route path="/targetting" element={<TargettingPage />} />
+        <Route path="/launch-ad" element={<LaunchAdsPage />} />
 
         <Route path="/discover-ads" element={<DiscoverAdsPage />} />
-        <Route path="/discover-ads-filter" element={<DiscoverAdsWithFilterPage/>}/>
+        <Route path="/discover-ads-filter" element={<DiscoverAdsWithFilterPage />} />
 
         <Route path="/ad-report" element={<AdReportPage />} />
 
@@ -115,14 +127,14 @@ function App() {
 
 
         {/* Analytics and reports */}
-        <Route path="/analytics" element={<AnalyticsAndReportTruePage/>}/>
+        <Route path="/analytics" element={<AnalyticsAndReportTruePage />} />
 
 
         {/* Competitor Analysis */}
         <Route path="/competitor-discover" element={<CompetitorDiscoverPage />} />
         <Route path="/competitor-analysis" element={<CompetitorAnalysisWithCompetitorPage />} />
-        <Route path="/competitor-analysis-results" element={<CompetitorAnalysisResultsPage/>}/>
-       
+        <Route path="/competitor-analysis-results" element={<CompetitorAnalysisResultsPage />} />
+
 
       </Routes>
     </BrowserRouter>

@@ -2,7 +2,7 @@ import React from "react";
 import profile from "../../assets/images/navbar/profile.png";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setUsername } from "../../redux/user/userSlice";
+import { setUsername } from "../../redux/features/user/userSlice";
 
 const AdPreviewComp = ({ description, watch, orientation, footer }) => {
   const dispatch = useDispatch();
@@ -39,9 +39,8 @@ const AdPreviewComp = ({ description, watch, orientation, footer }) => {
 
         {/* Image and text */}
         <div
-          className={`flex ${
-            orientation === "right" ? "flex-row-reverse" : "flex-row"
-          } items-center`}
+          className={`flex ${orientation === "right" ? "flex-row-reverse" : "flex-row"
+            } items-center`}
         >
           <img src={watch} alt="Watch" className="w-1/2" />
           <div className={`w-1/2 ${orientation === "right" ? "pr-4" : "pl-4"}`}>

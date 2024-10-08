@@ -11,7 +11,7 @@ import postImage6 from "../../assets/images/automation/commentAutomationPage/Pos
 import postImage7 from "../../assets/images/automation/commentAutomationPage/Post7.png";
 import postImage8 from "../../assets/images/automation/commentAutomationPage/Post8.png";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useEffect } from "react";
 
 const CommentAutomationPage = () => {

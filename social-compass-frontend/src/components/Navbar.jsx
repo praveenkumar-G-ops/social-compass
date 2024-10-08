@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import searchIcon from "../assets/images/navbar/search.png";
 import notification from "../assets/images/navbar/bell.png";
 import profile from "../assets/images/navbar/profile.png";
-import { setUsername } from "../redux/user/userSlice";
-import SettingsPage from "../pages/SettingsPage"; 
+import { setUsername } from "../redux/features/user/userSlice";
+import SettingsPage from "../pages/SettingsPage";
 import settingsImage from '../assets/images/sidebar/settings.png';
 import ProfileIcon from "../assets/images/navbar/Profile_Icon.png";
 

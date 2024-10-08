@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Heading from "./Styles/Heading";
 import Description from "./Styles/Description";
-import { logoutUser } from "../redux/user/userSlice";
+import { logoutUser } from "../redux/features/user/userSlice";
 
 const LogoutPopup = ({ onClose, onConfirm }) => {
   const username = useSelector((state) => state.user.username);
@@ -11,15 +11,15 @@ const LogoutPopup = ({ onClose, onConfirm }) => {
   const dispatch = useDispatch();
 
   const handleCancelbtn = () => {
-    onClose(); 
-    navigate("/"); 
+    onClose();
+    navigate("/");
     console.log("Cancel button clicked");
   };
 
   const handleConfirmbtn = () => {
     dispatch(logoutUser());
-    onConfirm(); 
-    navigate("/login"); 
+    onConfirm();
+    navigate("/login");
     console.log("Confirm button clicked");
   };
 

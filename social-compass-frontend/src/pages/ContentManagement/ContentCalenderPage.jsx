@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useState, useEffect } from "react";
 import Heading from "../../components/Styles/Heading";
 import profile from "../../assets/images/navbar/profile.png";
@@ -39,9 +39,9 @@ const ContentCalenderPage = () => {
     const components = [];
     for (let i = 0; i < content.count; i++) {
       if (content.type === 'facebook') {
-        components.push(<FacebookCalComp key={`fb-${dayIndex}-${i}`} description={"Lorem ipsum dolor sit amet consectetur. Malesuada elementum turpis elementum ."}/>);
+        components.push(<FacebookCalComp key={`fb-${dayIndex}-${i}`} description={"Lorem ipsum dolor sit amet consectetur. Malesuada elementum turpis elementum ."} />);
       } else if (content.type === 'instagram') {
-        components.push(<InstagramCalComp key={`ig-${dayIndex}-${i}`} description={"Lorem ipsum dolor sit amet consectetur. Malesuada elementum turpis elementum ."}/>);
+        components.push(<InstagramCalComp key={`ig-${dayIndex}-${i}`} description={"Lorem ipsum dolor sit amet consectetur. Malesuada elementum turpis elementum ."} />);
       }
     }
     return components;
@@ -65,21 +65,19 @@ const ContentCalenderPage = () => {
               {/* Toggle button  */}
               <div className="flex border rounded p-2">
                 <button
-                  className={`px-4 py-2 font-poppins text-xs ${
-                    timeFrame === "Week"
+                  className={`px-4 py-2 font-poppins text-xs ${timeFrame === "Week"
                       ? "bg-[#242565] text-white rounded-md"
                       : "bg-gray-100"
-                  }`}
+                    }`}
                   onClick={() => setTimeFrame("Week")}
                 >
                   Week
                 </button>
                 <button
-                  className={`px-4 py-2 font-poppins text-xs ${
-                    timeFrame === "Month"
+                  className={`px-4 py-2 font-poppins text-xs ${timeFrame === "Month"
                       ? "bg-[#242565] text-white rounded-md"
                       : "bg-gray-100"
-                  }`}
+                    }`}
                   onClick={() => setTimeFrame("Month")}
                 >
                   Month
@@ -89,7 +87,7 @@ const ContentCalenderPage = () => {
           </div>
 
           <div className="flex justify-between sticky top-0 bg-gray-100 z-10">
-            <Heading text={"February"} /> 
+            <Heading text={"February"} />
             {/* Dropdown */}
             <div className="flex items-center relative">
               <img

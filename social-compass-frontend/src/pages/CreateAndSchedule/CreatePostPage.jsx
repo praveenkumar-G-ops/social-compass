@@ -16,7 +16,7 @@ import MediaTab from "../../components/CreateAndSchedule/MediaTab";
 import BoostTab from "../../components/CreateAndSchedule/BoostTab";
 import Heading from "../../components/Styles/Heading";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useEffect } from "react";
 
 const CreatePostPage = () => {
@@ -55,31 +55,28 @@ const CreatePostPage = () => {
               <div className="w-[680px] p-6 flex flex-col -mt-2">
                 <div className="flex bg-gray-100 mb-0 justify-between ">
                   <button
-                    className={`text-xl font-semibold py-2 px-6 rounded-t-lg w-36 ${
-                      activeTab === "Post"
+                    className={`text-xl font-semibold py-2 px-6 rounded-t-lg w-36 ${activeTab === "Post"
                         ? "text-white bg-[#242565]"
                         : "bg-gray-100 text-[#242565] "
-                    }`}
+                      }`}
                     onClick={() => handleTabClick("Post")}
                   >
                     Post
                   </button>
                   <button
-                    className={`text-xl font-semibold py-2 px-6 rounded-t-lg w-36 ${
-                      activeTab === "Reels"
+                    className={`text-xl font-semibold py-2 px-6 rounded-t-lg w-36 ${activeTab === "Reels"
                         ? "text-white bg-[#242565]"
                         : "bg-gray-100 text-[#242565] "
-                    }`}
+                      }`}
                     onClick={() => handleTabClick("Reels")}
                   >
                     Reels
                   </button>
                   <button
-                    className={`text-xl font-semibold py-2 px-6 rounded-t-lg w-36 ${
-                      activeTab === "Story"
+                    className={`text-xl font-semibold py-2 px-6 rounded-t-lg w-36 ${activeTab === "Story"
                         ? "text-white bg-[#242565]"
                         : "bg-gray-100 text-[#242565]"
-                    }`}
+                      }`}
                     onClick={() => handleTabClick("Story")}
                   >
                     Story
@@ -154,9 +151,8 @@ const CreatePostPage = () => {
                         className="flex items-center w-10 h-6 bg-white border rounded-full p-1 cursor-pointer"
                       >
                         <div
-                          className={`w-4 h-4 bg-[#484848] rounded-full shadow-md transform transition-transform duration-300 ${
-                            isOn ? "translate-x-4" : "translate-x-0"
-                          }`}
+                          className={`w-4 h-4 bg-[#484848] rounded-full shadow-md transform transition-transform duration-300 ${isOn ? "translate-x-4" : "translate-x-0"
+                            }`}
                         ></div>
                       </div>
                     </div>

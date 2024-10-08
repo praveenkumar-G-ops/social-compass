@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSidebarItem } from "../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../redux/features/sidebar/sidebarSlice";
 import dashboardImage from "../assets/images/sidebar/dashboard.png";
 import createAndScheduleImage from "../assets/images/sidebar/createAndSchedule.png";
 import contentManagementImage from "../assets/images/sidebar/contentManagement.png";
@@ -30,7 +30,7 @@ import EngagementHoverButtons from "./SidebarHoverButtons/EngagementHoverButtons
 import AdsCampaignHoverButtons from "./SidebarHoverButtons/AdsCampaignHoverButtons";
 import ContentLibraryHoverButtons from "./SidebarHoverButtons/ContentLibraryHoverButtons";
 import CompetitorAnalysisHoverButtons from "./SidebarHoverButtons/CompetitorAnalysisHoverButtons";
-import LogoutPopup from "./LogoutPopup";  
+import LogoutPopup from "./LogoutPopup";
 
 const sidebarItems = [
   { image: dashboardImage, label: "Dashboard" },
@@ -75,7 +75,7 @@ const Sidebar = () => {
         return <CompetitorAnalysisPage />;
       case "Manage":
         return <ManagePage />;
-      
+
       default:
         return null;
     }
@@ -125,9 +125,8 @@ const Sidebar = () => {
           {sidebarItems.slice(0, 10).map((item, index) => (
             <div
               key={index}
-              className={`flex py-3 px-4 cursor-pointer items-center relative ${
-                activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
-              }`}
+              className={`flex py-3 px-4 cursor-pointer items-center relative ${activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
+                }`}
               onClick={() => handleSidebarItemClick(item.label)}
               onMouseEnter={() => setHoveredItem(item.label)}
               onMouseLeave={() => setHoveredItem(null)}
@@ -142,9 +141,8 @@ const Sidebar = () => {
             {sidebarItems.slice(10).map((item, index) => (
               <div
                 key={index}
-                className={`flex py-2 px-1 cursor-pointer items-center ${
-                  activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
-                }`}
+                className={`flex py-2 px-1 cursor-pointer items-center ${activeItem === item.label ? "bg-[#F5F6FA] border-r-4 border-[#0A075F]" : ""
+                  }`}
                 onClick={() => handleSidebarItemClick(item.label)}
               >
                 <img src={item.image} alt={item.label} className="h-5 w-5" />

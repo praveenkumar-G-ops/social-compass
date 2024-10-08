@@ -3,7 +3,7 @@ import SidebarComp from "../../components/SidebarComp";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 
 import profile from "../../assets/images/automation/commentAutomationPage/Profile.png";
 import Advertise from "../../assets/images/automation/commentAutomationPage/advertise.png";
@@ -74,11 +74,10 @@ const PublicReply = () => {
                         }
                         onClick={() => handleReplyClick(reply)}
                         placeholder="Reply text"
-                        className={`w-[290px] ml-3 mr-5 p-2 border border-gray-200 rounded mb-2 text-[14px] text-[rgba(165,165,165,1)] font-poppins font-[500px] ${
-                          index === replies.length - 1
+                        className={`w-[290px] ml-3 mr-5 p-2 border border-gray-200 rounded mb-2 text-[14px] text-[rgba(165,165,165,1)] font-poppins font-[500px] ${index === replies.length - 1
                             ? "bg-[rgba(244,244,244,1)]"
                             : ""
-                        }`}
+                          }`}
                       />
                     ))}
                     <button

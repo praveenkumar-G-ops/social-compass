@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useState, useEffect } from "react";
 import Heading from "../../components/Styles/Heading";
 import searchIcon from "../../assets/images/navbar/search.png";
@@ -43,21 +43,19 @@ const ContentApprovalPage = () => {
               {/* Toggle button */}
               <div className="flex border rounded p-2">
                 <button
-                  className={`px-4 py-2 font-poppins text-xs ${
-                    timeFrame === "Week"
+                  className={`px-4 py-2 font-poppins text-xs ${timeFrame === "Week"
                       ? "bg-[#242565] text-white rounded-md"
                       : "bg-gray-100"
-                  }`}
+                    }`}
                   onClick={() => setTimeFrame("Week")}
                 >
                   Week
                 </button>
                 <button
-                  className={`px-4 py-2 font-poppins text-xs ${
-                    timeFrame === "Month"
+                  className={`px-4 py-2 font-poppins text-xs ${timeFrame === "Month"
                       ? "bg-[#242565] text-white rounded-md"
                       : "bg-gray-100"
-                  }`}
+                    }`}
                   onClick={() => setTimeFrame("Month")}
                 >
                   Month
@@ -72,9 +70,8 @@ const ContentApprovalPage = () => {
               {buttons.map((button) => (
                 <button
                   key={button}
-                  className={`px-4 py-2 ${
-                    activeTab === button ? "border-b-4 border-[#242565]" : ""
-                  }`}
+                  className={`px-4 py-2 ${activeTab === button ? "border-b-4 border-[#242565]" : ""
+                    }`}
                   onClick={() => setActiveTab(button)}
                 >
                   {button}

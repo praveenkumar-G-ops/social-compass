@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import Heading from "../../components/Styles/Heading";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import williams from "../../assets/images/competitorAnalysis/williams.png";

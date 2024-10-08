@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 import Heading from "../../components/Styles/Heading";
 import searchIcon from "../../assets/images/navbar/search.png";
 import globe from "../../assets/images/competitorAnalysis/globe.png";
@@ -20,7 +20,7 @@ const CompetitorAnalysisWithCompetitorPage = () => {
   }, [dispatch]);
 
   const options = ["All Countries", "A", "B"];
- 
+
 
   const navigate = useNavigate();
 
@@ -80,37 +80,37 @@ const CompetitorAnalysisWithCompetitorPage = () => {
 
           {/* profile vs profile */}
           <div className="flex flex-col">
-              <div className="flex-1 flex mt-20 mx-20 justify-between ">
-            <div className="flex items-center relative">
-              <img
-                src={profile}
-                className="absolute left-5 h-7 w-7 rounded-full"
-              />
-              <select className="border h-full w-[350px] border-gray-300 rounded-3xl p-2 pl-20 pr-4 font-poppins text-sm">
-                <option>Soundharya</option>
-              </select>
-            </div>
-            <div>VS</div>
-            <div className="flex items-center relative">
-              <img
-                src={williams}
-                className="absolute left-5 h-7 w-7 rounded-full"
-              />
-              <select className="border h-full w-[350px] border-gray-300 rounded-3xl p-2 pl-20 pr-4 font-poppins text-sm">
-                <option>William_Mans</option>
-              </select>
-            </div>
-            
+            <div className="flex-1 flex mt-20 mx-20 justify-between ">
+              <div className="flex items-center relative">
+                <img
+                  src={profile}
+                  className="absolute left-5 h-7 w-7 rounded-full"
+                />
+                <select className="border h-full w-[350px] border-gray-300 rounded-3xl p-2 pl-20 pr-4 font-poppins text-sm">
+                  <option>Soundharya</option>
+                </select>
               </div>
-              <div className="flex-1 flex justify-end mr-20 mt-20 ">
-                <Button text={"Done"} onClick={() => {navigate("/competitor-analysis-results")}} />
+              <div>VS</div>
+              <div className="flex items-center relative">
+                <img
+                  src={williams}
+                  className="absolute left-5 h-7 w-7 rounded-full"
+                />
+                <select className="border h-full w-[350px] border-gray-300 rounded-3xl p-2 pl-20 pr-4 font-poppins text-sm">
+                  <option>William_Mans</option>
+                </select>
               </div>
-            </div>  
-          
+
+            </div>
+            <div className="flex-1 flex justify-end mr-20 mt-20 ">
+              <Button text={"Done"} onClick={() => { navigate("/competitor-analysis-results") }} />
+            </div>
+          </div>
+
         </div>
 
         {/* Done button */}
-  
+
       </div>
     </div>
   );

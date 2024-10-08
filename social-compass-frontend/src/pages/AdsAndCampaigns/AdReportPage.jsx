@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import SidebarComp from "../../components/SidebarComp";
 import Heading from "../../components/Styles/Heading";
 import { useDispatch } from "react-redux";
-import { setSidebarItem } from "../../redux/sidebar/sidebarSlice";
+import { setSidebarItem } from "../../redux/features/sidebar/sidebarSlice";
 
 const AdReportPage = () => {
   const dispatch = useDispatch();
@@ -63,7 +63,7 @@ const AdReportPage = () => {
       avgCPC: 274,
       spent: 5400.0,
     },
-    
+
 
   ];
 
@@ -106,7 +106,7 @@ const AdReportPage = () => {
 
           {/* Customers Table */}
           <div className="bg-white p-6 pl-14 rounded-lg ">
-            
+
 
             <table className="w-full">
               <thead>
