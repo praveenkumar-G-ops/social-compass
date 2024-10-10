@@ -12,6 +12,7 @@ import analyticsAndReportImage from "../assets/images/sidebar/analyticsAndReport
 import competitorAnalysisImage from "../assets/images/sidebar/competitorAnalysis.png";
 import manageImage from "../assets/images/sidebar/manage.png";
 import logoutImage from "../assets/images/sidebar/logout.png";
+import subscriptionImage from "../assets/images/sidebar/subscription.jpg"
 
 import DashboardPage from "../pages/DashboardPage";
 import CreateAndSchedulePage from "../pages/CreateAndSchedulePage";
@@ -31,6 +32,7 @@ import AdsCampaignHoverButtons from "./SidebarHoverButtons/AdsCampaignHoverButto
 import ContentLibraryHoverButtons from "./SidebarHoverButtons/ContentLibraryHoverButtons";
 import CompetitorAnalysisHoverButtons from "./SidebarHoverButtons/CompetitorAnalysisHoverButtons";
 import LogoutPopup from "./LogoutPopup";  
+import PricingPlans from "../pages/Subscribtion/Pricingcard";
 
 const sidebarItems = [
   { image: dashboardImage, label: "Dashboard" },
@@ -43,6 +45,7 @@ const sidebarItems = [
   { image: analyticsAndReportImage, label: "Analytics and Reports" },
   { image: competitorAnalysisImage, label: "Competitor Analysis" },
   { image: manageImage, label: "Manage" },
+  { image: subscriptionImage, label: "Subscription"},
 
   { image: logoutImage, label: "Logout" },
 ];
@@ -73,8 +76,11 @@ const Sidebar = () => {
         return <AnalyticsAndReportPage />;
       case "Competitor Analysis":
         return <CompetitorAnalysisPage />;
+      case "Subscription":
+        return <PricingPlans/>;   
       case "Manage":
         return <ManagePage />;
+       
       
       default:
         return null;
@@ -134,8 +140,8 @@ const Sidebar = () => {
             >
               <img src={item.image} alt={item.label} className="h-5 w-5" />
               <li className="pl-4 text-sm">{item.label}</li>
-              {hoveredItem === item.label && renderHoverButtons(item.label)}
-              {hoveredItem === item.label && renderHoverButtons(item.label)}
+              {/* {hoveredItem === item.label && renderHoverButtons(item.label)}
+              {hoveredItem === item.label && renderHoverButtons(item.label)} */}
             </div>
           ))}
           <div className="pt-5">

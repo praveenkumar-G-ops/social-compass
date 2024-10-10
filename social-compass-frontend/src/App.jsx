@@ -48,6 +48,8 @@ import EmailAutomationPage from "./pages/Automation/EmailAutomationPage";
 import CreatePostPage from "./pages/CreateAndSchedule/CreatePostPage";
 import CreatePostFbPage from './pages/CreateAndSchedule/CreatePostFbPage'
 import SignupPage from "./pages/Signup";
+import PricingPlans from "./pages/Subscribtion/Pricingcard";
+import PlanCard from "./pages/Subscribtion/Plancard";
 
 
 function App() {
@@ -122,7 +124,13 @@ function App() {
         <Route path="/competitor-discover" element={<CompetitorDiscoverPage />} />
         <Route path="/competitor-analysis" element={<CompetitorAnalysisWithCompetitorPage />} />
         <Route path="/competitor-analysis-results" element={<CompetitorAnalysisResultsPage/>}/>
-       
+
+        {/* subcrition page */}
+        <Route path ="/subcription" element={<PricingPlans/>}/>
+        <Route path="/plancard" element={<PlanCard/>}/>
+        
+
+            
 
       </Routes>
     </BrowserRouter>
